@@ -1,0 +1,120 @@
+{
+  "seed": 1,
+  "use_gpu": true,
+  "sr_mode": "SRCNN",
+  "logger_name": "train",
+  "logger_path": "log_info_train",
+
+  "SRCNN": {
+    "dataset": {
+      "train": {
+        "phase": "train",
+        "dataset_name": "T91",
+        "patch_size": 64,
+        "scale": 2,
+        "stride": 14,
+        "num_workers": 4
+      },
+      "test": {
+        "phase": "test",
+        "base_path": "dataset/datasets/test_set/",
+        "dataset_name": "Set14",
+        "scale": 2,
+        "num_workers": 4,
+        "border": 4
+      }
+    },
+    "train": {
+      "epoch": 2,
+      "batch_size": 32,
+      "loss_fn": "l2",
+      "reduction": "mean",
+      "optimizer": "adam",
+      "learning_rate": 1e-3
+    }
+  },
+  "FSRCNN": {
+    "dataset": {
+      "train": {
+        "phase": "train",
+        "dataset_name": "T91",
+        "patch_size": 10,
+        "scale": 2,
+        "stride": 4,
+        "batch_size": 64,
+        "num_workers": 4
+      },
+      "test": {
+        "phase": "test",
+        "dataset_name": "set14",
+        "scale": 2,
+        "batch_size": 64,
+        "num_workers": 4
+      }
+    },
+    "train": {
+      "epoch": 2,
+      "batch_size": 32,
+      "loss_fn": "l2",
+      "reduction": "mean",
+      "optimizer": "adam",
+      "learning_rate": 1e-3
+    }
+  },
+  "VDSR": {
+    "dataset": {
+      "train": {
+        "phase": "train",
+        "dataset_name": "T91",
+        "patch_size": 41,
+        "scale": 2,
+        "stride": 41,
+        "batch_size": 64,
+        "num_workers": 4
+      },
+      "test": {
+        "phase": "test",
+        "dataset_name": "set14",
+        "scale": 2,
+        "batch_size": 64,
+        "num_workers": 4
+      }
+    },
+    "train": {
+      "epoch": 2,
+      "batch_size": 32,
+      "loss_fn": "l2",
+      "reduction": "mean",
+      "optimizer": "adam",
+      "learning_rate": 1e-3
+    }
+  },
+  "EDSR": {
+    "dataset": {
+      "train": {
+        "phase": "train",
+        "dataset_name": "T91",
+        "patch_size": 64,
+        "scale": 2,
+        "stride": 14,
+        "batch_size": 64,
+        "num_workers": 4
+      },
+      "test": {
+        "phase": "test",
+        "dataset_name": "set14",
+        "scale": 2,
+        "batch_size": 64,
+        "num_workers": 4
+      }
+    },
+    "train": {
+      "epoch": 2,
+      "batch_size": 32,
+      "loss_fn": "l2",
+      "reduction": "mean",
+      "optimizer": "adam",
+      "learning_rate": 1e-3
+    }
+  }
+}
